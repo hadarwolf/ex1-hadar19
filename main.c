@@ -17,16 +17,16 @@
 
 // your code goes here
 int valid_arg(int argc,char *argv[]){
-    if ((argc != FIVE) || (argc != TWO))
+    if ((argc != FIVE) && (argc != TWO))
     {fprintf(stderr, ARG_ERR);
         return EXIT_FAILURE;}
 
-    if (argc == TWO && argv[2] != "test")
+    if (argc == TWO && strcmp(argv[2],"test") != 0)
     {fprintf(stderr, TEST_ERR);
         return EXIT_FAILURE;}
 
     if (argc ==FIVE)
-    {if (argv[1] != "cipher" || argv[1] != "decipher")
+    {if ((strcmp(argv[1],"cipher") != 0) || (strcmp(argv[1],"decipher") != 0))
         { fprintf(stderr, COM_ERR);
             return EXIT_FAILURE ;}
 
@@ -59,7 +59,7 @@ int main (int argc, char *argv[]) {
             while (fgets(line, MAX_LINE, input_file))
             {cipher(line, strtol(argv[2],NULL,TEN ));
                 fputs(line, output_file);}}
-            else   {
+        else{
                 while (fgets(line, MAX_LINE, input_file))
                 {decipher(line, strtol(argv[2],NULL,TEN ));
                     fputs(line, output_file);}
@@ -68,27 +68,27 @@ int main (int argc, char *argv[]) {
             return EXIT_SUCCESS;
         } else {
             if (test_cipher_non_cyclic_lower_case_positive_k()== 0)
-                return EXIT_FAILURE;
-        if (test_cipher_cyclic_lower_case_special_char_positive_k ()== 0)
-            return EXIT_FAILURE;
-        if (test_cipher_non_cyclic_lower_case_special_char_negative_k ()== 0)
-            return EXIT_FAILURE;
-        if (test_cipher_cyclic_lower_case_negative_k ()== 0)
-            return EXIT_FAILURE;
-        if (test_cipher_cyclic_upper_case_positive_k ()== 0)
-            return EXIT_FAILURE;
-        if (test_decipher_non_cyclic_lower_case_positive_k ()== 0)
-            return EXIT_FAILURE;
-        if (test_decipher_cyclic_lower_case_special_char_positive_k ()== 0)
-            return EXIT_FAILURE;
-        if (test_decipher_non_cyclic_lower_case_special_char_negative_k ()== 0)
-            return EXIT_FAILURE;
-        if (test_decipher_cyclic_lower_case_negative_k ()== 0)
-            return EXIT_FAILURE;
-        if (test_decipher_cyclic_upper_case_positive_k ()== 0)
-            return EXIT_FAILURE;
-        return EXIT_SUCCESS;
-        }}
+                {return EXIT_FAILURE;}
+            if (test_cipher_cyclic_lower_case_special_char_positive_k ()== 0)
+                {return EXIT_FAILURE;}
+            if (test_cipher_non_cyclic_lower_case_special_char_negative_k ()== 0)
+                {return EXIT_FAILURE;}
+            if (test_cipher_cyclic_lower_case_negative_k ()== 0)
+                {return EXIT_FAILURE;}
+            if (test_cipher_cyclic_upper_case_positive_k ()== 0)
+                {return EXIT_FAILURE;}
+            if (test_decipher_non_cyclic_lower_case_positive_k ()== 0)
+                {return EXIT_FAILURE;}
+            if (test_decipher_cyclic_lower_case_special_char_positive_k ()== 0)
+                {return EXIT_FAILURE;}
+            if (test_decipher_non_cyclic_lower_case_special_char_negative_k ()== 0)
+                {return EXIT_FAILURE;}
+            if (test_decipher_cyclic_lower_case_negative_k ()== 0)
+                {return EXIT_FAILURE;}
+            if (test_decipher_cyclic_upper_case_positive_k ()== 0)
+                {return EXIT_FAILURE;}
+        return EXIT_SUCCESS;}
+}
 
 
 

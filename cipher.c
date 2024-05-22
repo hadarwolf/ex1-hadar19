@@ -1,5 +1,5 @@
 #include "cipher.h"
-
+#define TWO_SIX 26
 /// IN THIS FILE, IMPLEMENT EVERY FUNCTION THAT'S DECLARED IN cipher.h.
 
 
@@ -12,9 +12,9 @@ void cipher (char s[], int k) {
         if ((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i] <= 'Z')) {
 //// Determine whether to wrap around for lowercase or uppercase letters
             if (s[i] >= 'a' && s[i] <= 'z') {
-                s[i] = 'a' + (s[i] - 'a' + k) % 26;
+                s[i] = 'a' + (s[i] - 'a' + k) % TWO_SIX;
             } else {
-                s[i] = 'A' + (s[i] - 'A' + k) % 26;
+                s[i] = 'A' + (s[i] - 'A' + k) % TWO_SIX;
             }
         }
     }
@@ -30,9 +30,9 @@ void decipher (char s[], int k) {
         if ((s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i] <= 'Z')) {
 //// Determine whether to wrap around for lowercase or uppercase letters
             if (s[i] >= 'a' && s[i] <= 'z') {
-                s[i] = 'a' + (s[i] - 'a' - k +26) % 26;
+                s[i] = 'a' + (s[i] - 'a' - k +TWO_SIX) % TWO_SIX;
             } else {
-                s[i] = 'A' + (s[i] - 'A' - k +26) % 26;
+                s[i] = 'A' + (s[i] - 'A' - k +TWO_SIX) % TWO_SIX;
             }
         }
     }
