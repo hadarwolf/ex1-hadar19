@@ -72,7 +72,8 @@ int main (int argc, char *argv[]) {
                 {return EXIT_FAILURE;}
             if (test_cipher_cyclic_lower_case_special_char_positive_k ()== 0)
                 {return EXIT_FAILURE;}
-            if (test_cipher_non_cyclic_lower_case_special_char_negative_k ()== 0)
+            if (test_cipher_non_cyclic_lower_case_special_char_negative_k \
+            ()== 0)
                 {return EXIT_FAILURE;}
             if (test_cipher_cyclic_lower_case_negative_k ()== 0)
                 {return EXIT_FAILURE;}
@@ -82,7 +83,7 @@ int main (int argc, char *argv[]) {
                 {return EXIT_FAILURE;}
             if (test_decipher_cyclic_lower_case_special_char_positive_k ()== 0)
                 {return EXIT_FAILURE;}
-            if (test_decipher_non_cyclic_lower_case_special_char_negative_k () \
+            if (test_decipher_non_cyclic_lower_case_special_char_negative_k ()\
                 == 0)
                 {return EXIT_FAILURE;}
             if (test_decipher_cyclic_lower_case_negative_k ()== 0)
