@@ -26,9 +26,10 @@ int valid_arg(int argc,char *argv[]){
         return EXIT_FAILURE;}
 
     if (argc ==FIVE)
-    {if ((strcmp(argv[1],"cipher") != 0) || (strcmp(argv[1],"decipher") != 0))
-        { fprintf(stderr, COM_ERR);
-            return EXIT_FAILURE ;}
+    {if (strcmp(argv[1],"cipher") != 0)
+        { if(strcmp(argv[1],"decipher") != 0)
+            {fprintf(stderr, COM_ERR);
+            return EXIT_FAILURE ;}}
 
 
         for (int i = 0; argv[2][i] != '\0'; i++) {
@@ -81,7 +82,7 @@ int main (int argc, char *argv[]) {
                 {return EXIT_FAILURE;}
             if (test_decipher_cyclic_lower_case_special_char_positive_k ()== 0)
                 {return EXIT_FAILURE;}
-            if (test_decipher_non_cyclic_lower_case_special_char_negative_k ()
+            if (test_decipher_non_cyclic_lower_case_special_char_negative_k () \
                 == 0)
                 {return EXIT_FAILURE;}
             if (test_decipher_cyclic_lower_case_negative_k ()== 0)
