@@ -21,7 +21,7 @@ int valid_arg(int argc,char *argv[]){
     {fprintf(stderr, ARG_ERR);
         return EXIT_FAILURE;}
 
-    if (argc == TWO && strcmp(argv[2],"test") != 0)
+    if (argc == TWO && strcmp(argv[1],"test") != 0)
     {fprintf(stderr, TEST_ERR);
         return EXIT_FAILURE;}
 
