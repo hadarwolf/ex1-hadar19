@@ -1,10 +1,9 @@
 #include "tests.h"
 #include <string.h>
-
 #define K_1 3
 #define K_2 2
-#define K_3 -1
-#define K_4 -3
+#define K_3 (-1)
+#define K_4 (-3)
 #define K_5 29
 
 // See full documentation in header file
