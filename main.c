@@ -34,7 +34,7 @@ int valid_arg(int argc,char *argv[]){
 
         for (int i = 0; argv[2][i] != '\0'; i++) {
         if (!isdigit(argv[2][i]))
-        {
+        {if argv[2][0] =='-'{break}
             fprintf(stderr, K_ERR);
             return EXIT_FAILURE;
         }
