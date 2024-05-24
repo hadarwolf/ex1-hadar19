@@ -32,7 +32,7 @@ void decipher (char s[], int k) {
             if (s[i] >= 'a' && s[i] <= 'z') {
                 int new_k = (s[i] - 'a' - k) % TWO_SIX;
                 if (new_k < 0) { s[i] = (char) ('z' + new_k+1); }
-                s[i] = (char)('a' + (s[i] - 'a' - k +TWO_SIX) % TWO_SIX);
+                else{s[i] = (char)('a' + (s[i] - 'a' - k +TWO_SIX) % TWO_SIX);}
             } else {
                 int new_k = (s[i] - 'A' - k) % TWO_SIX;
                 if (new_k < 0) { s[i] = (char) ('Z' + new_k+1); }
